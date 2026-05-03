@@ -1,6 +1,7 @@
 {
   "name": "changelog-example",
   "version": "0.1.0",
+  "private": true,
   "description": "This repo demonstrates auto changelog generation using semantic-release and commitlint.",
   "main": "index.js",
   "scripts": {
@@ -15,9 +16,5 @@
   },
   "devDependencies": {
     "semantic-release": "^25.0.3"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "restricted"
   }
 }
