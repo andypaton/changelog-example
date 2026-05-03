@@ -1,0 +1,12 @@
+# CODEOWNERS file for changelog-example
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners for all files in the repository
+* @andypaton
+
+# Workflows
+.github/workflows/ @andypaton
+
+# Package configuration
+package.json @andypaton
+package-lock.json @andypaton

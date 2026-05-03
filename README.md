@@ -56,7 +56,7 @@ test: add integration tests for API
 
 1. clone this repo
 2. modify update.me.txt
-3. git commit -a "any git commit message"
+3. git commit -am "any git commit message"
 4. git push -u origin
 5. on github create a PR
 6. merge the PR
