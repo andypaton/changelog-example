@@ -1,0 +1,27 @@
+name: Lint Commits
+
+on:
+  pull_request:
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install commitlint
+        run: |
+          npm install --save-dev @commitlint/{config-conventional,cli}
+
+      - name: Add config
+        run: |
+          echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
+
+      - name: Lint commits
+        run: |
+          npx commitlint --from origin/${{ github.base_ref }} --to HEAD
+
+      - name: Check PR title format
+        run: |
+          echo "${{ github.event.pull_request.title }}" | grep -E "^(feat|fix|chore|docs|refactor|test|perf)(\(.+\))?: .+" || (echo "❌ PR title must follow Conventional Commits format" && exit 1)
